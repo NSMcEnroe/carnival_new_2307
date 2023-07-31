@@ -18,14 +18,27 @@ class Carnival
   end
 
   def most_popular_ride
-    mpr_list = Hash.new(0)
+    popularity_list = Hash.new(0)
     @rides.each do |ride|
-      mpr_list[ride] = ride.total_revenue / ride.admission_fee
+      popularity_list[ride] = ride.total_revenue / ride.admission_fee
     end
-    mpr_list.sort_by do |ride, popularity|
+    popularity_list.sort_by do |ride, popularity|
       popularity
     end
-    mpr_list.keys[0]
+    popularity_list.keys[0]
   end
+
+  def most_profitable_ride
+    profit_list = Hash.new(0)
+    @rides.each do |ride|
+      profit_list[ride] = ride.total_revenue 
+    end
+    profit_list.sort_by do |ride, profit|
+      profit
+    end
+    profit_list.keys[0]
+  end
+
+
 end
     
