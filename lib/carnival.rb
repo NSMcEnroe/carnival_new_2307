@@ -8,5 +8,13 @@ class Carnival
   def add_ride(ride)
     @rides << ride
   end
+
+  def total_revenue
+    t_r = 0
+    @rides.each do |ride|
+      t_r += ride.total_revenue
+    end
+    t_r
+  end
 end
     
