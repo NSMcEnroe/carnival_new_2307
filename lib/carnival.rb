@@ -1,4 +1,5 @@
 class Carnival
+  @@total_revenues = 0
   attr_reader :duration, :rides
   def initialize(duration)
     @duration = duration
@@ -9,10 +10,15 @@ class Carnival
     @rides << ride
   end
 
+  def self.total_revenues
+    @@total_revenues
+  end
+
   def total_revenue
     t_r = 0
     @rides.each do |ride|
       t_r += ride.total_revenue
+      @@total_revenues += ride.total_revenue
     end
     t_r
   end

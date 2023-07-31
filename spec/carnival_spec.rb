@@ -75,5 +75,27 @@ RSpec.describe Carnival do
     end
   end
 
+  # describe "#total_revenues" do
+  #   it "can return all revenues of all carnivals" do
+  #     carnival2 = Carnival.new(9)
+  #     @carnival.add_ride(@ride1)
+  #     @carnival.add_ride(@ride3)
+  #     @ride1.board_rider(@visitor1)
+  #     @ride1.board_rider(@visitor2)
+  #     @ride1.board_rider(@visitor1)
+  #     @ride3.board_rider(@visitor1)
+  #     @ride3.board_rider(@visitor2)
+  #     @ride3.board_rider(@visitor3)
+  #     carnival2.add_ride(@ride2)
+  #     @ride2.board_rider(@visitor3)
+  #     @ride2.board_rider(@visitor3)
+  #     expect(Carnival.total_revenues).to eq(15)
+  #   end
+  # end
+
+  #Couldn't quite get total revenues
+
+
+
 
 end
