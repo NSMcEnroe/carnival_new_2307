@@ -26,6 +26,13 @@ RSpec.describe Ride do
     it "can state the ride's initial total revenue" do
       expect(@ride1.total_revenue).to eq(0)
     end
+
+    it "can state the total revenue after riders have entered" do
+      @ride1.board_rider(@visitor1)
+      @ride1.board_rider(@visitor2)
+      @ride1.board_rider(@visitor1)
+      expect(@ride1.total_revenue).to eq(3)
+    end
   end
 
   describe '#board_ride' do

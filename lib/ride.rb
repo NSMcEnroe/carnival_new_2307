@@ -10,13 +10,14 @@ class Ride
   end
 
   def total_revenue
-    0
+    @rider_log.values.sum * @admission_fee
   end
 
   def board_rider(guest)
     if guest.preferences.include?(@excitement) && guest.spending_money >= @admission_fee
       @rider_log[guest] += 1
       guest.pay_admission(@admission_fee)
+      total_revenue
     end
   end
 
