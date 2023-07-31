@@ -16,5 +16,16 @@ class Carnival
     end
     t_r
   end
+
+  def most_popular_ride
+    mpr_list = Hash.new(0)
+    @rides.each do |ride|
+      mpr_list[ride] = ride.total_revenue / ride.admission_fee
+    end
+    mpr_list.sort_by do |ride, popularity|
+      popularity
+    end
+    mpr_list.keys[0]
+  end
 end
     
